@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useMemo, useState } from "react";
 import { ExternalLink, Github, Search, X } from "lucide-react";
-import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { GlassButton } from "@/components/ui/apple-tahoe-liquid-glass-button";
 
 type Project = {
   id: string;
@@ -17,11 +17,11 @@ type Project = {
 };
 
 const PROJECTS: Project[] = [
-  { id: "scribe", title: "Scribe.bet", category: "Full-Stack", year: 2025, blurb: "A full casino-type gaming platform with 3 in-house games and REST APIs.", description: "Built a complete full-stack casino gaming site. Features include 3 original in-house games, PHP + MySQL custom backend, JWT authentication, wallet/balance management, and admin controls. All game logic runs server-side for security.", tech: ["PHP", "MySQL", "React", "JWT", "REST API"], live: "https://scribe.bet", cover: { hue: 260, label: "SCRIBE_BET" } },
-  { id: "omnix", title: "Omnix / Valo AI", category: "Backend", year: 2024, blurb: "Multimodal AI infrastructure and Actor-based backend worker.", description: "Developed a highly capable, multimodal AI chatbot specialized in cybersecurity and STEM. Architected a thread-safe FastAPI server with an Actor-based background worker for the llama.cpp engine, supporting real-time concurrent inference.", tech: ["Python", "FastAPI", "llama.cpp", "AI/ML"], cover: { hue: 200, label: "OMNIX_AI" } },
-  { id: "educationopedia", title: "Educationopedia", category: "Full-Stack", year: 2024, blurb: "Global study abroad and MBBS application platform.", description: "Engineered and rebranded the core platform for 'Experience Education Across The Globe'. Built comprehensive study abroad exploration and application systems for international students.", tech: ["React", "TypeScript", "Tailwind CSS"], cover: { hue: 35, label: "EDU_OPEDIA" } },
-  { id: "roomie", title: "Roomie App", category: "Full-Stack", year: 2024, blurb: "Full-stack real estate and roommate matching application.", description: "Transformed an existing frontend project into a comprehensive full-stack application. Designed the backend architecture to support seamless data flow, user profiles, and real-time roommate matching.", tech: ["React", "Node.js", "PostgreSQL", "REST API"], cover: { hue: 320, label: "ROOMIE_APP" } },
-  { id: "android", title: "Disbursement API", category: "Backend", year: 2024, blurb: "Disbursement Payout API integration with gateway callbacks.", description: "Integrated payout APIs and resolved complex callback processing issues. Handled user balance refunds, robust transaction states, and concurrent gateway notifications securely.", tech: ["Node.js", "MySQL", "Payments"], cover: { hue: 120, label: "PAYOUT_SYS" } },
+  { id: "scribe", title: "Scribe.bet", category: "Full-Stack", year: 2025, blurb: "A full casino-type gaming platform with 3 in-house games and REST APIs.", description: "Built a complete full-stack casino gaming site. Features include 3 original in-house games, PHP + MySQL custom backend, JWT authentication, wallet/balance management, and admin controls. All game logic runs server-side for security.", tech: ["PHP", "MySQL", "React", "JWT", "REST API"], live: "https://scribe.bet", cover: { hue: 0, label: "SCRIBE_BET" } },
+  { id: "omnix", title: "Omnix / Valo AI", category: "Backend", year: 2024, blurb: "Multimodal AI infrastructure and Actor-based backend worker.", description: "Developed a highly capable, multimodal AI chatbot specialized in cybersecurity and STEM. Architected a thread-safe FastAPI server with an Actor-based background worker for the llama.cpp engine, supporting real-time concurrent inference.", tech: ["Python", "FastAPI", "llama.cpp", "AI/ML"], cover: { hue: 355, label: "OMNIX_AI" } },
+  { id: "educationopedia", title: "Educationopedia", category: "Full-Stack", year: 2024, blurb: "Global study abroad and MBBS application platform.", description: "Engineered and rebranded the core platform for 'Experience Education Across The Globe'. Built comprehensive study abroad exploration and application systems for international students.", tech: ["React", "TypeScript", "Tailwind CSS"], cover: { hue: 10, label: "EDU_OPEDIA" } },
+  { id: "roomie", title: "Roomie App", category: "Full-Stack", year: 2024, blurb: "Full-stack real estate and roommate matching application.", description: "Transformed an existing frontend project into a comprehensive full-stack application. Designed the backend architecture to support seamless data flow, user profiles, and real-time roommate matching.", tech: ["React", "Node.js", "PostgreSQL", "REST API"], cover: { hue: 350, label: "ROOMIE_APP" } },
+  { id: "android", title: "Disbursement API", category: "Backend", year: 2024, blurb: "Disbursement Payout API integration with gateway callbacks.", description: "Integrated payout APIs and resolved complex callback processing issues. Handled user balance refunds, robust transaction states, and concurrent gateway notifications securely.", tech: ["Node.js", "MySQL", "Payments"], cover: { hue: 5, label: "PAYOUT_SYS" } },
 ];
 
 const CATEGORIES = ["All", "Full-Stack", "Mobile", "Backend"] as const;
@@ -188,17 +188,17 @@ export function Projects() {
                 </div>
                 <div className="mt-8 flex flex-wrap gap-4">
                   {open.live && (
-                    <a href={open.live}>
-                      <LiquidButton size="lg" className="flex items-center gap-2">
+                    <a href={open.live} target="_blank" rel="noopener noreferrer">
+                      <GlassButton size="lg" contentClassName="flex items-center gap-2" className="px-8 text-white font-semibold" glassColor="oklch(from var(--accent) l c h / 20%)">
                         <ExternalLink className="size-3.5" /> Live Demo
-                      </LiquidButton>
+                      </GlassButton>
                     </a>
                   )}
                   {open.repo && (
-                    <a href={open.repo}>
-                      <LiquidButton size="lg" variant="default" className="border border-border/50 text-muted-foreground">
+                    <a href={open.repo} target="_blank" rel="noopener noreferrer">
+                      <GlassButton size="lg" contentClassName="flex items-center gap-2" className="px-8 text-white/80 font-medium" glassColor="oklch(from var(--foreground) l c h / 5%)">
                         <Github className="size-3.5" /> Source
-                      </LiquidButton>
+                      </GlassButton>
                     </a>
                   )}
                 </div>

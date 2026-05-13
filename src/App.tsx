@@ -10,13 +10,13 @@ import { Testimonials } from "@/components/portfolio/Testimonials";
 import { Blog } from "@/components/portfolio/Blog";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
-import { CursorGlow } from "@/components/portfolio/CursorGlow";
+
 
 export default function App() {
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
 
-      <CursorGlow />
+
       <Nav />
       <main>
         <Hero />

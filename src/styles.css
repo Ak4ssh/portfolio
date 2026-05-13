@@ -34,40 +34,112 @@
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animation-iteration: var(----animation-iteration);
+  @keyframes animStar {
+  from {
+    transform: translateY(0px);
+    }
+  to {
+    transform: translateY(-2000px);
+    }
+  }
+  @keyframes animGravity {
+  0% {
+    transform: translateY(-26px);
+    opacity: 0;
+    }
+  30%, 80% {
+    letter-spacing: 40px;
+    padding-left: 40px;
+    transform: translateY(0px);
+    opacity: 1;
+    }
+  92%, 100% {
+    letter-spacing: 35px;
+    padding-left: 35px;
+    transform: translateY(-4px);
+    opacity: 0;
+    }
+  }
+  @keyframes animDont {
+  0%, 15% {
+    transform: translateY(-26px);
+    opacity: 0;
+    }
+  35%, 80% {
+    transform: translateY(0px);
+    opacity: 1;
+    }
+  92%, 100% {
+    transform: translateY(-4px);
+    opacity: 0;
+    }
+  }
+  @keyframes animLet {
+  0%, 25% {
+    transform: translateY(-26px);
+    opacity: 0;
+    }
+  45%, 80% {
+    transform: translateY(0px);
+    opacity: 1;
+    }
+  92%, 100% {
+    transform: translateY(-4px);
+    opacity: 0;
+    }
+  }
+  @keyframes animGo {
+  0%, 35% {
+    transform: translateY(-26px);
+    opacity: 0;
+    }
+  55%, 80% {
+    transform: translateY(0px);
+    opacity: 1;
+    }
+  92%, 100% {
+    transform: translateY(-4px);
+    opacity: 0;
+    }
+  }
 }
 
 :root {
   --radius: 1rem;
 
-  --background: oklch(0.18 0.012 260);
+  --background: oklch(0 0 0);
   --foreground: oklch(0.98 0 0);
 
-  --card: oklch(0.20 0.012 260);
+  --card: oklch(0.12 0 0);
   --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.19 0.012 260);
+  --popover: oklch(0.12 0 0);
   --popover-foreground: oklch(0.98 0 0);
 
   --primary: oklch(0.95 0 0);
-  --primary-foreground: oklch(0.16 0.012 260);
+  --primary-foreground: oklch(0.10 0 0);
 
-  --secondary: oklch(0.25 0.012 260);
+  --secondary: oklch(0.18 0 0);
   --secondary-foreground: oklch(0.95 0 0);
 
-  --muted: oklch(0.25 0.01 260);
-  --muted-foreground: oklch(0.7 0.015 260);
+  --muted: oklch(0.18 0 0);
+  --muted-foreground: oklch(0.65 0 0);
 
-  /* Soft modern accent: Cyan-blue */
-  --accent: oklch(0.75 0.12 230);
-  --accent-foreground: oklch(0.16 0.012 260);
+  /* Intense Crimson Red Accent */
+  --accent: oklch(0.62 0.25 29);
+  --accent-foreground: oklch(0.98 0 0);
 
   --destructive: oklch(0.6 0.22 25);
   --destructive-foreground: oklch(0.98 0 0);
 
-  --border: oklch(0.24 0.012 260);
-  --input: oklch(0.24 0.012 260);
-  --ring: oklch(0.75 0.12 230);
+  --border: oklch(0.18 0 0);
+  --input: oklch(0.18 0 0);
+  --ring: oklch(0.62 0.25 29);
 
-  --glow: 0 0 60px oklch(0.75 0.12 230 / 0.25);
+  --glow: 0 0 60px oklch(0.62 0.25 29 / 0.25);
+
+  --animation-iteration: infinite;
 }
 
 .dark { /* same as root — single dark theme */ }

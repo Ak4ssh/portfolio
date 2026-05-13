@@ -58,7 +58,7 @@ export function ParticleField() {
         if (p.y < 0) p.y += canvas.height; else if (p.y > canvas.height) p.y -= canvas.height;
 
         ctx.beginPath();
-        ctx.fillStyle = "rgba(0, 220, 255, 0.85)";
+        ctx.fillStyle = "rgba(255, 255, 255, 0.85)";
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fill();
       }
@@ -70,7 +70,7 @@ export function ParticleField() {
           const d2 = dx * dx + dy * dy;
           if (d2 < linkDist * linkDist) {
             const alpha = 1 - Math.sqrt(d2) / linkDist;
-            ctx.strokeStyle = `rgba(0, 220, 255, ${alpha * 0.18})`;
+            ctx.strokeStyle = `rgba(255, 255, 255, ${alpha * 0.18})`;
             ctx.lineWidth = 0.6 * dpr;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);

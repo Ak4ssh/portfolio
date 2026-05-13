@@ -1,5 +1,5 @@
+import { GlassButton } from "@/components/ui/apple-tahoe-liquid-glass-button";
 import { Send } from "lucide-react";
-import { LiquidButton } from "@/components/ui/liquid-glass-button";
 
 export function Contact() {
   return (
@@ -24,9 +24,9 @@ export function Contact() {
 
         <div className="mt-12 flex justify-center">
           <a href="https://t.me/ak4ssh" target="_blank" rel="noopener noreferrer">
-            <LiquidButton size="lg" variant="default" className="border border-border/50 text-muted-foreground hover:text-foreground">
+            <GlassButton size="lg" contentClassName="flex items-center gap-2" className="px-8">
               <Send className="size-4" /> Message on Telegram
-            </LiquidButton>
+            </GlassButton>
           </a>
         </div>
       </div>
